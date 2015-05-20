@@ -3,8 +3,9 @@
         <li role="presentation"><a href="./messages.php">Kirjoita</a></li>
         <li role="presentation"><a href="./login.php">Admin</a></li>
       </ul>
-      <center><a href="http://www.rastikarhut.fi/"><img src="./img/juttupaikka.png" alt="juttupaikka" width="40%"></a></center>
-      <?php foreach($pages[$pgkey] as $post) { ?>
+      <p align="center"><a href="http://www.rastikarhut.fi/"><img src="./img/juttupaikka.png" alt="juttupaikka" width="40%"></a></p>
+      <?php  if(count($posts)>0){
+      foreach($pages[$pgkey] as $post) { ?>
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title"><?php echo $post->getTitle(); ?></h3>
@@ -33,6 +34,7 @@
               <span aria-hidden="true">&raquo;</span>
             </a>
           </li>
-          <?php } ?>
+          <?php }?>
         </ul>
       </nav>
+      <?php }?>

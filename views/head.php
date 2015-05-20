@@ -4,6 +4,7 @@
     require_once "./libs/common.php";
     require_once "./libs/models/Post.php";
     $posts = Post::getPosts();
+    if(count($posts)>0){
     $pagedPosts = array();
       foreach($posts as $post){
         if(strpos($f,'.')!==0){
@@ -12,7 +13,8 @@
       }
     $pages = array_chunk($pagedPosts, 20);
     $pgkey = (int)$_GET['showpage'];
-    $pages[$pgkey]; 
+    $pages[$pgkey];      
+    }
   ?>
   <head>
     <title>Juttupaikka</title>

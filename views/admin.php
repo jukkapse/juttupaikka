@@ -1,7 +1,8 @@
 <h1>Vieraskirjan hallinta</h1>
 
 <h3>Kirjoitukset</h3>
-	 <?php foreach($pages[$pgkey] as $post) { ?>
+	 <?php if(count($posts)>0){
+   foreach($pages[$pgkey] as $post) { ?>
       <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title" float:left;><?php echo $post->getTitle(); ?></h3>
@@ -14,9 +15,7 @@
           </div>
         </div>
 	<?php } ?>	
-	<form method="GET">
-		<button type="submit" name="logout" formaction="login.php" class="btn btn-danger">Kirjaudu ulos</button>
-	</form>
+
   <!--Pagination -->
      <nav align="center">
         <ul class="pagination">
@@ -38,3 +37,7 @@
           <?php } ?>
         </ul>
       </nav>
+      <?php } ?>
+        <form method="GET">
+    <button type="submit" name="logout" formaction="login.php" class="btn btn-danger">Kirjaudu ulos</button>
+  </form>
